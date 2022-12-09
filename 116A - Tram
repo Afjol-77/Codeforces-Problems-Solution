@@ -1,0 +1,29 @@
+#include <iostream>
+
+using namespace std;
+
+int main(){
+    int n,i,scap=0;
+    cin >> n;
+    int a[n],b[n],capacity[n];
+    
+    for(i=0;i<n;i++){
+        cin >> a[i] >> b[i];
+    }
+    
+    for(i=0;i<n;i++){
+        scap = scap - a[i];
+        scap = scap + b[i];
+        capacity[i] = scap;
+    }
+    
+    int max = capacity[0];
+    for(i=1;i<n;i++){
+        if(capacity[i]>max){
+            max = capacity[i];
+        }
+    }
+    cout << max << endl;
+            
+    return 0;
+}
